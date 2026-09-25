@@ -1,0 +1,246 @@
+/* ============================================================
+   Ahmed Ali - Personal Portfolio
+   External Stylesheet (Lab 3: HTML Advanced - Personal Portfolio II)
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #222222;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Header ---------- */
+header {
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header p {
+  margin: 5px 0 0 0;
+}
+
+/* ---------- Navigation menu (floated, horizontal) ---------- */
+nav {
+  background-color: #004080;
+  padding: 10px 15px;
+  overflow: hidden; /* clearfix for floated links */
+}
+
+nav a {
+  float: left;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #cce6ff;
+}
+
+/* clear the float so nothing after nav collapses under it */
+nav::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ---------- Layout containers ---------- */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 25px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  overflow: hidden; /* clearfix wrapper for any floated children */
+}
+
+h1 {
+  text-align: center;
+  color: #003366;
+}
+
+h2 {
+  color: #004080;
+  border-bottom: 2px solid #004080;
+  padding-bottom: 5px;
+  clear: both; /* always start headings below any floated content */
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ---------- About Me: floated profile picture with wrapped text ---------- */
+.profile-pic {
+  float: left;
+  margin: 0 20px 10px 0;
+  border-radius: 50%;
+  border: 3px solid #003366;
+  width: 160px;
+  height: 160px;
+}
+
+.contact-line {
+  color: #555555;
+  margin-top: 0;
+}
+
+.about-text {
+  overflow: hidden; /* let paragraph text wrap around the floated image */
+}
+
+/* ---------- Hobby cards ---------- */
+.hobby-card {
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fafafa;
+  overflow: hidden;
+}
+
+.hobby-card h3 {
+  margin-top: 0;
+  color: #004080;
+}
+
+/* ---------- Image gallery (floated with clear) ---------- */
+.gallery {
+  overflow: hidden; /* clearfix so the container wraps the floated figures */
+}
+
+.gallery figure {
+  float: left;
+  width: 30%;
+  margin: 1.5% 1.5%;
+  text-align: center;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.gallery img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.gallery figcaption {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #004080;
+}
+
+/* clear the floats after the gallery so the container sizes correctly */
+.clearfix {
+  clear: both;
+}
+
+/* ---------- Tables (Skills page) ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+th, td {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #004080;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+td.label {
+  font-weight: bold;
+  width: 150px;
+  color: #003366;
+}
+
+ul {
+  line-height: 1.8;
+}
+
+/* ---------- Contact form ---------- */
+form {
+  background-color: #fafafa;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #004080;
+}
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="submit"] {
+  margin-top: 15px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #003366;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #003366;
+  color: white;
+  margin-top: 30px;
+  clear: both;
+}
+
+/* ---------- Responsive tweak for the floated gallery on small screens ---------- */
+@media (max-width: 600px) {
+  .gallery figure {
+    float: none;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .profile-pic {
+    float: none;
+    display: block;
+    margin: 0 auto 15px auto;
+  }
+}
